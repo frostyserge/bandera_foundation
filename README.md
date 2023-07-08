@@ -39,7 +39,7 @@ This project's mission is to help this great organisation to have a better prese
 - [ ] To buy merchandise 
 - [ ] To add merchandise to my cart and securely check out using all available payment systems 
 - [ ] To take part in charity auctions 
-- [ ] To change the web app's lenguage between English and Ukrainian
+- [ ] To change the web app's language between English and Ukrainian
 
 
 # Technologies used:
