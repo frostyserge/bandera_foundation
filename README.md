@@ -48,3 +48,5 @@ This project's mission is to help this great organisation to have a better prese
 - [ ] Database: PostrgreSQL
 
 # Initial Wireframe
+
+<img width="924" alt="Screenshot 2023-07-08 at 5 34 35 PM" src="https://github.com/frostyserge/bandera_foundation_backend/assets/64938599/aae00e3b-8073-4e10-bcff-ae92b3477774">
