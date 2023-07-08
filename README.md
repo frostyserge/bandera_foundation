@@ -50,3 +50,6 @@ This project's mission is to help this great organisation to have a better prese
 # Initial Wireframe
 
 <img width="924" alt="Screenshot 2023-07-08 at 5 34 35 PM" src="https://github.com/frostyserge/bandera_foundation_backend/assets/64938599/aae00e3b-8073-4e10-bcff-ae92b3477774">
+<img width="923" alt="Screenshot 2023-07-08 at 5 44 29 PM" src="https://github.com/frostyserge/bandera_foundation_backend/assets/64938599/9e40bf32-e331-4fcf-8120-07def9c29789">
+<img width="925" alt="Screenshot 2023-07-08 at 5 52 11 PM" src="https://github.com/frostyserge/bandera_foundation_backend/assets/64938599/5817b974-5ac6-4025-8321-60dd147c5991">
+<img width="927" alt="Screenshot 2023-07-08 at 5 55 05 PM" src="https://github.com/frostyserge/bandera_foundation_backend/assets/64938599/7b9d8cc1-8d2b-4466-953a-42c74bd833e7">
