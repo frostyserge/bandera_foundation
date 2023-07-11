@@ -14,7 +14,7 @@ This war could be compared with the biblical story of the battle between a sheph
 This was the time when the Ukrainian people needed even more help, the Ukrainian Army was in need in more equipment, uniform and other supplies in order to fight back such a monster like the russian war machine.
 This was the time when a small charity organisation "Bandera Foundation" has been founded in order to increase even more help for the Ukrainian people. 
 
-This project's mission is to help this great organisation to have a better presense on the web and to attract more donors or volunteers to help a good cause.
+This project's mission is to help this organization to have a better presense on the web and to attract more donors and volunteers to help a good cause.
 
 # User Story
 
