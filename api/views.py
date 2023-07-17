@@ -7,6 +7,7 @@ from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnl
 from .serializers import MerchSerializer
 from .models import Merch
 from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 
 # api views
 class HomeView(APIView):
@@ -15,6 +16,30 @@ class HomeView(APIView):
     def get(self, request):
         content = {'message': 'Welcome to our Foundation Page!'}
         return Response(content)
+    
+# class UserList(APIView):
+#     """
+#     Create a new user. It's called 'UserList' because normally we'd have a get
+#     method here too, for retrieving a list of all User objects.
+#     """
+
+#     permission_classes = [AllowAny,]
+#     http_method_names = ['get', 'head']
+
+
+#     def get(self, request, format=None):
+#         users = User.objects.all()
+#         serializer = UserSerializerWithToken(users, many=True)
+#         return Response(serializer.data)
+
+#     def post(self, request, format=None):
+#         self.http_method_names.append("GET")
+
+#         serializer = UserSerializerWithToken(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated,]
@@ -27,7 +52,7 @@ class LogoutView(APIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         
         except Exception as e:
-            return Response(status=status.status.HTTP_400_BAD_REQUEST)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
 
 class MerchList(ListAPIView):
     permission_classes = [IsAuthenticatedOrReadOnly,]
@@ -35,7 +60,8 @@ class MerchList(ListAPIView):
     serializer_class = MerchSerializer
     
 
-class MerchView(CreateAPIView):
+class MerchCreate(CreateAPIView):
+    permission_classes = [IsAuthenticated,]
     queryset = Merch.objects.all()
     serializer_class = MerchSerializer
     success_url = '/shop/'
