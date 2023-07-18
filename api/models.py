@@ -1,14 +1,40 @@
 from django.db import models
-from django.contrib.auth.base_user import BaseUserManager
-from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User, AbstractUser
 
 
+# class AppUser(AbstractUser):
+#     username = models.CharField(max_length=100)
+#     email = models.EmailField(unique=True)
 
+#     USERNAME_FIELD = 'email'
+#     REQUIRED_FIELDS = ['username']
+
+
+#     def profile(self):
+#         profile = Profile.objects.get(user=self)
+
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     full_name = models.CharField(max_length=1000)
+#     bio = models.CharField(max_length=100)
+#     image = models.ImageField(upload_to="user_images", default="default.jpg")
+#     verified = models.BooleanField(default=False)
+
+#     def create_user_profile(sender, instance, created, **kwargs):
+#         if created:
+#             Profile.objects.create(user=instance)
+
+#     def save_user_profile(sender, instance, **kwargs):
+#         instance.profile.save()
+
+#     post_save.connect(create_user_profile, sender=User)
+#     post_save.connect(save_user_profile, sender=User)
 
 class Merch(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) # SET_NULL means that if a user gets deleted the products that it is connected to will remain in the database
     name = models.CharField(max_length=200, null=True, blank=True)
-    img = models.ImageField(null=True, blank=True)
+    img = models.CharField(max_length=500, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     in_stock_amount = models.IntegerField(null=True, blank=True, default=0)
     description = models.TextField(null=True, blank=True)
