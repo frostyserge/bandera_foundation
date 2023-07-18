@@ -4,5 +4,5 @@ from .models import Merch
 class MerchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Merch
-        fields = ('id', 'name', 'price', 'description', 'created_at')
+        fields = '__all__' # dunder method returning all fields
 

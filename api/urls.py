@@ -1,5 +1,6 @@
 from django.contrib import admin
 from . import views
+from rest_framework.urlpatterns import format_suffix_patterns
 from django.urls import path
 
 urlpatterns = [
@@ -9,3 +10,5 @@ urlpatterns = [
     path('shop/new/', views.MerchCreate.as_view(), name = 'merch_create'),
     path('logout/', views.LogoutView.as_view(), name = 'logout'),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

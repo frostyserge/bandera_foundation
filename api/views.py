@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
-from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, ListCreateAPIView
+from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, ListCreateAPIView, RetrieveAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly, AllowAny, IsAdminUser
 from .serializers import MerchSerializer
 from .models import Merch
-from rest_framework import status
+from rest_framework import status, mixins, generics
 from rest_framework_simplejwt.tokens import RefreshToken
 
 # api views
@@ -53,6 +53,8 @@ class LogoutView(APIView):
         
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+        
+# -------------------- Our Shop/Merch Views --------------------------
 
 class MerchList(ListAPIView):
     permission_classes = [IsAuthenticatedOrReadOnly,]
@@ -75,8 +77,8 @@ class MerchDetail(APIView):
             raise Http404
         
     def get(self, request, pk, format=None):
-        merch_item = self.get_object(pk)
-        serializer = MerchSerializer(merch_item)
+        product = self.get_object(pk)
+        serializer = MerchSerializer(product)
         return Response(serializer.data)
     
     def put(self, request, pk, format=None):
