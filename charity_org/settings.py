@@ -88,8 +88,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'charity_org.wsgi.application'
 
 REST_FRAMEWORK = { # the authentication JWT Class
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ],
      'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.AllowAny', # JWTAuthentication for later
+        'rest_framework_simplejwt.authentication.JWTAuthentication', 
       ],
 }
 
