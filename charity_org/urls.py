@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
+from django.conf import settings # this is to have access to settings.py file from here
+from django.conf.urls.static import static # function that allows ut to connect with urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +31,6 @@ urlpatterns = [
           jwt_views.TokenRefreshView.as_view(), 
           name ='token_refresh'),
 ]
+
+# this function connects our variables in the settings.py file and pointing to which diretory to look into
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
