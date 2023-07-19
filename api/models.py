@@ -88,6 +88,7 @@ class ShippingAddress(models.Model):
         return self.address
 
 class Event(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200, null=True, blank=True)
     img = models.CharField(max_length=500, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -96,6 +97,7 @@ class Event(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Project(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200, null=True, blank=True)
     img = models.CharField(max_length=500, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
