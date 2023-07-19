@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'charity_org.wsgi.application'
 
 REST_FRAMEWORK = { # the authentication JWT Class
      'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.AllowAny', # JWTAuthentication for later
       ],
 }
 
