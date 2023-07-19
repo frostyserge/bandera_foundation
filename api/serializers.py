@@ -10,6 +10,6 @@ class MerchSerializer(serializers.ModelSerializer):
 class AppUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__' # dunder method returning all fields
+        fields = ['id', 'username', 'email']
     
 
